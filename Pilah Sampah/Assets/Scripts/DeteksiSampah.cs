@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DeteksiSampah : MonoBehaviour
@@ -60,6 +61,13 @@ public class DeteksiSampah : MonoBehaviour
 
             //Play the MediaPlayerSalah sound
             MediaPlayerSalah.Play();
+
+            //If score 0 or bellow
+            if(Data.score <= 0)
+            {
+                //Game over
+                SceneManager.LoadScene("GameOver");
+            }
         }
     }
 }
